@@ -1,0 +1,36 @@
+{% extends "header.html" %}
+
+{% block content %}
+<div class="container mt-3 " style="font-size: larger; background-color: aqua;"><b>Marksheet</b></div>
+
+{% load static %}
+
+<div class="container">
+    <img src="{% static '/mrksht.gif' %}" alt="srcimg" style="max-width: 10%;height: auto;">
+    <div ><b>Enter your marks as per subjects..</b></div><br>
+    <div class="container form-control">
+        <form method="post">
+            {% csrf_token %}
+            <label>Subject 1</label><br>
+            <input type="text" name="val1" value="0"><br>
+            <label>Subject 2</label><br>
+            <input type="text" name="val2" value="0"><br>
+            <label>Subject 3</label><br>
+            <input type="text" name="val3" value="0"><br>
+            <label>Subject 4</label><br>
+            <input type="text" name="val4" value="0"><br>
+            <label>Subject 5</label><br>
+            <input type="text" name="val5" value="0"><br><br>
+            <button type="submit">Submit</button><br>
+            <label>Total marks:</label><br>
+            <input value="{{total}}"></input><br>
+            <label>Percentage:</label><br>
+            <input value="{{per}}"></input><br>
+            <label>Grade:</label><br>
+            <input value="{{grade}}"></input><br>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}
